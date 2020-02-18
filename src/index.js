@@ -1,4 +1,4 @@
-import { Line } from '@antv/g2plot';
+import {Line} from '@antv/g2plot';
 //日期，武汉新增确诊，武汉新增死亡，湖北新增确诊，湖北新增死亡，全国新增确诊，全国新增死亡
 const originData = [
     ["2020-01-10", 41, 1, 0, 0, 0, 0],
@@ -26,72 +26,73 @@ const originData = [
 ];
 let data = []
 
-for (var i = 0; i < originData.length;i++) {
-  data.push(
-      {
-        date: originData[i][0],
-        type: "武汉新增确诊",
-        value: originData[i][1],
-      }
-  );data.push(
-      {
-        date: originData[i][0],
-        type: "武汉新增死亡",
-        value: originData[i][2],
-      }
-  );data.push(
-      {
-        date: originData[i][0],
-        type: "湖北新增确诊",
-        value: originData[i][3],
-      }
-  );data.push(
-      {
-        date: originData[i][0],
-        type: "湖北新增死亡",
-        value: originData[i][4],
-      }
-  );data.push(
-      {
-        date: originData[i][0],
-        type: "全国新增确诊",
-        value: originData[i][5],
-      }
-  );data.push(
-      {
-        date: originData[i][0],
-        type: "全国新增死亡",
-        value: originData[i][6],
-      }
-  );
-  i++;
+for (var i = 0; i < originData.length; i++) {
+    data.push(
+        {
+            date: originData[i][0],
+            type: "武汉新增确诊",
+            value: originData[i][1],
+        }
+    );
+    data.push(
+        {
+            date: originData[i][0],
+            type: "武汉新增死亡",
+            value: originData[i][2],
+        }
+    );
+    data.push(
+        {
+            date: originData[i][0],
+            type: "湖北新增确诊",
+            value: originData[i][3],
+        }
+    );
+    data.push(
+        {
+            date: originData[i][0],
+            type: "湖北新增死亡",
+            value: originData[i][4],
+        }
+    );
+    data.push(
+        {
+            date: originData[i][0],
+            type: "全国新增确诊",
+            value: originData[i][5],
+        }
+    );
+    data.push(
+        {
+            date: originData[i][0],
+            type: "全国新增死亡",
+            value: originData[i][6],
+        }
+    );
 }
-
+console.log(data);
 const linePlot = new Line(document.getElementById('container'), {
-  title: {
-    visible: true,
-    text: '新冠肺炎确诊和死亡多折线图',
-  },
-  description: {
-    visible: true,
-    text: '将数据按照某一字段进行分组，用于比对不同类型数据的趋势。',
-  },
-  padding: 'auto',
-  forceFit: true,
-  data,
-  xField: 'date',
-  yField: 'value',
-  yAxis: {
-    label: {
-      // 数值格式化为千分位
-      formatter: (v) => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`),
+    title: {
+        visible: true,
+        text: '新冠肺炎确诊和死亡多折线图',
     },
-  },
-  legend: {
-    position: 'right-top',
-  },
-  seriesField: 'type',
-  responsive: true,
+    description: {
+        visible: true,
+        text: '将数据按照某一字段进行分组，用于比对不同类型数据的趋势。',
+    },
+    padding: 'auto',
+    forceFit: true,
+    data,
+    axis: {
+        visible: true,
+    },
+    xField: 'date',
+    yField: 'value',
+    legend: {
+        position: 'right-top',
+    },
+    seriesField: 'type',
+    responsive: true,
 });
 
 linePlot.render();
