@@ -1,237 +1,76 @@
 import { Line } from '@antv/g2plot';
-
-const data = [
-  {
-    date: '2018/8/1',
-    type: 'download',
-    value: 4623,
-  },
-  {
-    date: '2018/8/1',
-    type: 'register',
-    value: 2208,
-  },
-  {
-    date: '2018/8/1',
-    type: 'bill',
-    value: 182,
-  },
-  {
-    date: '2018/8/2',
-    type: 'download',
-    value: 6145,
-  },
-  {
-    date: '2018/8/2',
-    type: 'register',
-    value: 2016,
-  },
-  {
-    date: '2018/8/2',
-    type: 'bill',
-    value: 257,
-  },
-  {
-    date: '2018/8/3',
-    type: 'download',
-    value: 508,
-  },
-  {
-    date: '2018/8/3',
-    type: 'register',
-    value: 2916,
-  },
-  {
-    date: '2018/8/3',
-    type: 'bill',
-    value: 289,
-  },
-  {
-    date: '2018/8/4',
-    type: 'download',
-    value: 6268,
-  },
-  {
-    date: '2018/8/4',
-    type: 'register',
-    value: 4512,
-  },
-  {
-    date: '2018/8/4',
-    type: 'bill',
-    value: 428,
-  },
-  {
-    date: '2018/8/5',
-    type: 'download',
-    value: 6411,
-  },
-  {
-    date: '2018/8/5',
-    type: 'register',
-    value: 8281,
-  },
-  {
-    date: '2018/8/5',
-    type: 'bill',
-    value: 619,
-  },
-  {
-    date: '2018/8/6',
-    type: 'download',
-    value: 1890,
-  },
-  {
-    date: '2018/8/6',
-    type: 'register',
-    value: 2008,
-  },
-  {
-    date: '2018/8/6',
-    type: 'bill',
-    value: 87,
-  },
-  {
-    date: '2018/8/7',
-    type: 'download',
-    value: 4251,
-  },
-  {
-    date: '2018/8/7',
-    type: 'register',
-    value: 1963,
-  },
-  {
-    date: '2018/8/7',
-    type: 'bill',
-    value: 706,
-  },
-  {
-    date: '2018/8/8',
-    type: 'download',
-    value: 2978,
-  },
-  {
-    date: '2018/8/8',
-    type: 'register',
-    value: 2367,
-  },
-  {
-    date: '2018/8/8',
-    type: 'bill',
-    value: 387,
-  },
-  {
-    date: '2018/8/9',
-    type: 'download',
-    value: 3880,
-  },
-  {
-    date: '2018/8/9',
-    type: 'register',
-    value: 2956,
-  },
-  {
-    date: '2018/8/9',
-    type: 'bill',
-    value: 488,
-  },
-  {
-    date: '2018/8/10',
-    type: 'download',
-    value: 3606,
-  },
-  {
-    date: '2018/8/10',
-    type: 'register',
-    value: 678,
-  },
-  {
-    date: '2018/8/10',
-    type: 'bill',
-    value: 507,
-  },
-  {
-    date: '2018/8/11',
-    type: 'download',
-    value: 4311,
-  },
-  {
-    date: '2018/8/11',
-    type: 'register',
-    value: 3188,
-  },
-  {
-    date: '2018/8/11',
-    type: 'bill',
-    value: 548,
-  },
-  {
-    date: '2018/8/12',
-    type: 'download',
-    value: 4116,
-  },
-  {
-    date: '2018/8/12',
-    type: 'register',
-    value: 3491,
-  },
-  {
-    date: '2018/8/12',
-    type: 'bill',
-    value: 456,
-  },
-  {
-    date: '2018/8/13',
-    type: 'download',
-    value: 6419,
-  },
-  {
-    date: '2018/8/13',
-    type: 'register',
-    value: 2852,
-  },
-  {
-    date: '2018/8/13',
-    type: 'bill',
-    value: 689,
-  },
-  {
-    date: '2018/8/14',
-    type: 'download',
-    value: 1643,
-  },
-  {
-    date: '2018/8/14',
-    type: 'register',
-    value: 4788,
-  },
-  {
-    date: '2018/8/14',
-    type: 'bill',
-    value: 280,
-  },
-  {
-    date: '2018/8/15',
-    type: 'download',
-    value: 445,
-  },
-  {
-    date: '2018/8/15',
-    type: 'register',
-    value: 4319,
-  },
-  {
-    date: '2018/8/15',
-    type: 'bill',
-    value: 176,
-  },
+//日期，武汉新增确诊，武汉新增死亡，湖北新增确诊，湖北新增死亡，全国新增确诊，全国新增死亡
+const originData = [
+    ["2020-01-10", 41, 1, 0, 0, 0, 0],
+    ["2020-01-11", 0, 0, 0, 0, 0, 0],
+    ["2020-01-12", 0, 0, 0, 0, 0, 0],
+    ["2020-01-13", 0, 0, 0, 0, 0, 0],
+    ["2020-01-14", 0, 0, 0, 0, 0, 0],
+    ["2020-01-15", 0, 1, 0, 0, 0, 0],
+    ["2020-01-16", 4, 0, 0, 0, 0, 0],
+    ["2020-01-17", 17, 0, 0, 0, 0, 0],
+    ["2020-01-18", 59, 1, 0, 0, 0, 0],
+    ["2020-01-19", 60, 0, 72, 0, 77, 0],
+    ["2020-01-20", 60, 2, 72, 0, 77, 0],
+    ["2020-01-21", 0, 0, 0, 0, 0, 0],
+    ["2020-01-22", 0, 0, 0, 0, 0, 0],
+    ["2020-01-23", 70, 6, 105, 7, 259, 8],
+    ["2020-01-24", 0, 0, 0, 0, 444, 16],
+    ["2020-01-25", 46, 7, 323, 13, 688, 15],
+    ["2020-01-26", 80, 18, 371, 24, 769, 24],
+    ["2020-01-27", 892, 22, 1291, 24, 1771, 26],
+    ["2020-01-28", 315, 19, 840, 25, 1459, 26],
+    ["2020-01-29", 356, 25, 1032, 37, 1737, 38],
+    ["2020-01-30", 378, 30, 1220, 42, 1982, 43],
+    ["2020-01-31", 576, 33, 1347, 45, 2102, 46],
 ];
+let data = []
+
+for (var i = 0; i < originData.length;i++) {
+  data.push(
+      {
+        date: originData[i][0],
+        type: "武汉新增确诊",
+        value: originData[i][1],
+      }
+  );data.push(
+      {
+        date: originData[i][0],
+        type: "武汉新增死亡",
+        value: originData[i][2],
+      }
+  );data.push(
+      {
+        date: originData[i][0],
+        type: "湖北新增确诊",
+        value: originData[i][3],
+      }
+  );data.push(
+      {
+        date: originData[i][0],
+        type: "湖北新增死亡",
+        value: originData[i][4],
+      }
+  );data.push(
+      {
+        date: originData[i][0],
+        type: "全国新增确诊",
+        value: originData[i][5],
+      }
+  );data.push(
+      {
+        date: originData[i][0],
+        type: "全国新增死亡",
+        value: originData[i][6],
+      }
+  );
+  i++;
+}
 
 const linePlot = new Line(document.getElementById('container'), {
   title: {
     visible: true,
-    text: '多折线图',
+    text: '新冠肺炎确诊和死亡多折线图',
   },
   description: {
     visible: true,
